@@ -39,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
     public void whoWon(View view){
         if(pepsiVotes > cokeVotes){
             champ(pepsiVotes ,'p');
-        }else{
+        }else if(cokeVotes > pepsiVotes){
             champ(cokeVotes,'c');
+        }else if(cokeVotes == pepsiVotes){
+            champ(cokeVotes,'e');
         }
 
     }
@@ -49,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
         TextView t = (TextView) findViewById(R.id.won);
         if (i=='p'){
             t.setText("Pepsi Won "+ total);
-        }else{
+        }else if(i=='c'){
             t.setText("Coca-Cola Won " + total);
+        }else{
+            t.setText("Table " + total);
         }
 
     }
